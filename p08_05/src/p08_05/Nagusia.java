@@ -24,6 +24,7 @@ public class Nagusia {
 
 	private static JFrame frame = new JFrame("Dadoak");
 	private static JFrame frame2 = new JFrame("Partida");
+	private static JFrame frame3 = new JFrame("Emaitza");
 
 
 	private static  JLabel label1 = new JLabel("Dadoak Aukeratu");
@@ -34,13 +35,23 @@ public class Nagusia {
 	private static JButton botoiadado10 = new JButton("10eko dadoak");
 	private static JButton botoiadado20 = new JButton("20eko dadoak");
 	private static JTextField textfield1 =new JTextField();
+	private static  JLabel lbltext2 = new JLabel();
+	private static  JLabel lbltext3 = new JLabel();
+
+
 	static int kopuruatxtfld ;
-	int randomNumdado4 = (int)(Math.random() * 5);
-	int randomNumdado6 = (int)(Math.random() * 7);
-	int randomNumdado10 = (int)(Math.random() * 11);
-	int randomNumdado20 = (int)(Math.random() * 21);
+	  
+	
+	
 
 	public static void main(String[] args) {
+		
+		
+		int randomNumdado6 = (int)(Math.random() * 6 + 1);
+		int randomNumdado10 = (int)(Math.random() * 10 + 1);
+		int randomNumdado20 = (int)(Math.random() * 20 + 1);
+		
+		
 
 		frame.setLayout(null);
 		frame.add(label1); 
@@ -54,6 +65,7 @@ public class Nagusia {
 		botoia1.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) {
+			
 				frame.setVisible(false);
 				frame2.setLayout( new FlowLayout());
 				frame2.setVisible(true);
@@ -72,6 +84,7 @@ public class Nagusia {
 				textfield1.setSize(500, 500);
 				textfield1.setText("                                        ");
 				frame2.add(textfield1);
+				
 				textfield1.addActionListener(new ActionListener() { 
 					@Override
 					public void actionPerformed(ActionEvent e) {
@@ -87,9 +100,28 @@ public class Nagusia {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				String dadozenbakiak = "";
+				int erantzuna = 0;
 
+				frame2.setVisible(false);
+				frame3.setLayout( new FlowLayout());
+				frame3.setVisible(true);
+				frame3.add(lbltext2);
+				frame3.add(lbltext3);
 
+				//System.out.println(kopuruatxtfld);
 
+				for (int i = 0; i < kopuruatxtfld; i++) {
+					int randomNumdado4 = (int)(Math.random() * 4 +1);
+					
+					dadozenbakiak = dadozenbakiak + String.valueOf(randomNumdado4);
+					 erantzuna += randomNumdado4;
+				
+					
+				}
+				lbltext2.setText(dadozenbakiak);
+				lbltext3.setText(String.valueOf(erantzuna));
+				
 
 
 

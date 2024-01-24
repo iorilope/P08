@@ -92,7 +92,7 @@ public class Transakzioak
 				txtDolar.setText(String.valueOf(iAldaketa));
 				// aldatu sliderDolar
 				int i = Math.round(iAldaketa);
-				sliderEuro.setValue(i);
+				sliderDolar.setValue(i);
 			}
 		}
 	}
