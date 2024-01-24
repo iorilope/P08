@@ -42,7 +42,8 @@ public class Transakzioak
 			txtDolar.setText(String.valueOf(iAldaketa));
 			// aldatu slider
 			sliderDolar.setValue(Math.round(Float.parseFloat(txtDolar.getText())));
-			sliderEuro.setValue(Math.round(Float.parseFloat(txtEuro.getText())));
+			txtDolar.setText(String.valueOf(iAldaketa));
+			
 		}
 
 		if (e.getSource() == txtDolar)
@@ -53,6 +54,7 @@ public class Transakzioak
 			iAldaketa	= Math.round(iAldaketa);
 			iAldaketa	= iAldaketa / 100;
 			txtEuro.setText(String.valueOf(iAldaketa));
+			sliderEuro.setValue(Math.round(Float.parseFloat(txtEuro.getText())));
 		}
 	}
 
@@ -105,16 +107,18 @@ public class Transakzioak
 		sliderEuro.setMinorTickSpacing(100);
 		sliderEuro.setPaintTicks(true);
 		sliderEuro.setPaintLabels(true);
-		sliderEuro.setEnabled(false);
+		sliderEuro.setEnabled(true);
 		sliderDolar.setBorder(BorderFactory.createTitledBorder("Dolarrak"));
 		sliderDolar.setMajorTickSpacing(200);
 		sliderDolar.setMinorTickSpacing(100);
 		sliderDolar.setPaintTicks(true);
 		sliderDolar.setPaintLabels(true);
-		sliderDolar.setEnabled(false);
+		sliderDolar.setEnabled(true);
 		panel1.add(lblEuroak);
 		panel1.add(txtEuro);
 		panel1.add(sliderEuro);
+		txtEuro.setText(String.valueOf(sliderEuro.getValue()));
+	
 		panel2.add(label);
 		panel2.add(txtAldaketa);
 		panel3.add(lblDolarrak);
@@ -128,13 +132,37 @@ public class Transakzioak
 				System.exit(0);
 			}
 		});
+		
+		sliderEuro.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                // Aldatu labelaren balioa
+                txtEuro.setText(String.valueOf(sliderEuro.getValue()));
+            }
+        });
+		
+		sliderDolar.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                // Aldatu labelaren balioa
+                txtDolar.setText(String.valueOf(sliderDolar.getValue()));
+            }
+        });
 
-		txtEuro.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				aldatuTextua(e);
-			}
+
+		txtEuro.addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		        //kaluklatu dolarrak
+		        float iAldaketa = Float.parseFloat(txtEuro.getText());
+		        iAldaketa	= 100 * iAldaketa * Float.parseFloat(txtAldaketa.getText());
+		        iAldaketa	= Math.round(iAldaketa);
+		        iAldaketa	= iAldaketa / 100;
+		        // aldatu dolar testua
+		        txtDolar.setText(String.valueOf(iAldaketa));
+		        // aldatu slider balios
+		        sliderDolar.setValue(Math.round(Float.parseFloat(txtDolar.getText())));
+		    }
 		});
 
 		txtDolar.addActionListener(new ActionListener()
