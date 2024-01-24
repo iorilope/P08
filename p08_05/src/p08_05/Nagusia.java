@@ -6,6 +6,7 @@ package p08_05;
 
 
 import java.awt.FlowLayout;
+import java.lang.Math;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,7 +34,11 @@ public class Nagusia {
 	private static JButton botoiadado10 = new JButton("10eko dadoak");
 	private static JButton botoiadado20 = new JButton("20eko dadoak");
 	private static JTextField textfield1 =new JTextField();
-	static int kopurua ;
+	static int kopuruatxtfld ;
+	int randomNumdado4 = (int)(Math.random() * 5);
+	int randomNumdado6 = (int)(Math.random() * 7);
+	int randomNumdado10 = (int)(Math.random() * 11);
+	int randomNumdado20 = (int)(Math.random() * 21);
 
 	public static void main(String[] args) {
 
@@ -70,14 +75,27 @@ public class Nagusia {
 				textfield1.addActionListener(new ActionListener() { 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						kopurua = Integer.valueOf(textfield1.getText());
-						System.out.println(kopurua);
+						kopuruatxtfld = Integer.valueOf(textfield1.getText());
+						System.out.println(kopuruatxtfld);
 					}
 				});
 
 				frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 			}
 		} );
+		botoiadado4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+
+
+
+
+
+			}
+		});
+
 
 
 
