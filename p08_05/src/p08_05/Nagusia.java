@@ -75,10 +75,13 @@ public class Nagusia {
 		int randomNumdado20 = (int)(Math.random() * 20 + 1);
 
 		frame.setLayout(null);
+		
 		frame.add(label1); 
 		frame.add(botoia1);
 		botoia1.setBounds(900,425,150,50);
+		
 		frame.pack();
+		frame.setSize(1800,1800);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
