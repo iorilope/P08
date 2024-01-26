@@ -21,8 +21,6 @@ public class SwingTest
 
 	public static void ekintzak(ActionEvent e)
 	{
-
-
 		//Gure objetuan datuak idatziko edo ezabatuko ditugu aukeraren arabera, garbitu aukeratuz gero testua hutsik eta idatzi sakatuz gero
 		// Kaixo mundua mezua ikusiko dugu label batean,label hau aldakorra da
 		Object obj = e.getSource();
