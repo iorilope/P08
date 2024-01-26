@@ -8,15 +8,12 @@ package p08_05;
 
 import java.awt.FlowLayout;
 import java.lang.Math;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
-
 
 /**
  * 
@@ -73,12 +70,9 @@ public class Nagusia {
 	 */
 	public static void main(String[] args) {
 
-
 		int randomNumdado6 = (int)(Math.random() * 6 + 1);
 		int randomNumdado10 = (int)(Math.random() * 10 + 1);
 		int randomNumdado20 = (int)(Math.random() * 20 + 1);
-
-
 
 		frame.setLayout(null);
 		frame.add(label1); 
@@ -87,7 +81,6 @@ public class Nagusia {
 		frame.pack();
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
 
 		botoia1.addActionListener(new ActionListener() 
 		{
@@ -112,20 +105,21 @@ public class Nagusia {
 				frame2.add(textfield1);
 
 				textfield1.addActionListener(new ActionListener() { 
+					
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						kopuruatxtfld = Integer.valueOf(textfield1.getText());
 						System.out.println(kopuruatxtfld);
 					}
 				});
-
 				frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 			}
 		} );
+		
 		botoiadado4.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				
 				String dadozenbakiak = "";
 				int erantzuna = 0;
 
@@ -134,25 +128,24 @@ public class Nagusia {
 				frame3.setVisible(true);
 				frame3.add(lbltext2);
 				frame3.add(lbltext3);
-
 				//System.out.println(kopuruatxtfld);
 
 				for (int i = 0; i < kopuruatxtfld; i++) {
+					
 					int randomNumdado4 = (int)(Math.random() * 4 +1);
-
 					dadozenbakiak = dadozenbakiak + String.valueOf(randomNumdado4);
 					erantzuna += randomNumdado4;
-
 				}
+				
 				lbltext2.setText(dadozenbakiak);
 				lbltext3.setText("Batura : " + String.valueOf(erantzuna));
-
 			}
 		});
+		
 		botoiadado6.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				
 				String dadozenbakiak = "";
 				int erantzuna = 0;
 
@@ -161,25 +154,24 @@ public class Nagusia {
 				frame3.setVisible(true);
 				frame3.add(lbltext2);
 				frame3.add(lbltext3);
-
 				//System.out.println(kopuruatxtfld);
 
 				for (int i = 0; i < kopuruatxtfld; i++) {
+					
 					int randomNumdado6 = (int)(Math.random() * 6 +1);
-
 					dadozenbakiak = dadozenbakiak + String.valueOf(randomNumdado6);
 					erantzuna += randomNumdado6;
-
 				}
+				
 				lbltext2.setText(dadozenbakiak);
 				lbltext3.setText("Batura : " + String.valueOf(erantzuna));
-
 			}
 		});
 		botoiadado10.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				
 				String dadozenbakiak = "";
 				int erantzuna = 0;
 
@@ -188,19 +180,17 @@ public class Nagusia {
 				frame3.setVisible(true);
 				frame3.add(lbltext2);
 				frame3.add(lbltext3);
-
 				//System.out.println(kopuruatxtfld);
 
 				for (int i = 0; i < kopuruatxtfld; i++) {
+					
 					int randomNumdado10 = (int)(Math.random() * 10 +1);
-
 					dadozenbakiak = dadozenbakiak + String.valueOf(randomNumdado10);
 					erantzuna += randomNumdado10;
-
 				}
+				
 				lbltext2.setText(dadozenbakiak);
 				lbltext3.setText("Batura : " + String.valueOf(erantzuna));
-
 			}
 		});
 
@@ -208,6 +198,7 @@ public class Nagusia {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				
 				String dadozenbakiak = "";
 				int erantzuna = 0;
 
@@ -216,12 +207,10 @@ public class Nagusia {
 				frame3.setVisible(true);
 				frame3.add(lbltext2);
 				frame3.add(lbltext3);
-
 				//System.out.println(kopuruatxtfld);
 
 				for (int i = 0; i < kopuruatxtfld; i++) {
 					int randomNumdado20 = (int)(Math.random() * 20 +1);
-
 					dadozenbakiak = dadozenbakiak + String.valueOf(randomNumdado20);
 					erantzuna += randomNumdado20;
 
