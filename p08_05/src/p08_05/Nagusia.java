@@ -101,7 +101,7 @@ public class Nagusia {
 				botoiadado10.setBounds(900,425,150,50);
 				frame2.add(botoiadado20);
 				botoiadado20.setBounds(900,425,150,50);
-				textfield1.setSize(500, 500);
+				textfield1.setSize(500, 533);
 				textfield1.setText("                                        ");
 				frame2.add(textfield1);
 
